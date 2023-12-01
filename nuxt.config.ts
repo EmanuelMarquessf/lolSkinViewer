@@ -8,4 +8,10 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
+  modules:[
+    'vue3-carousel-nuxt'
+  ],
+  carousel: {
+    prefix: 'MyPrefix'
+  }
 })
