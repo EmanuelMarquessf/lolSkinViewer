@@ -2,7 +2,7 @@
 const version = await $fetch(
   "https://ddragon.leagueoflegends.com/api/versions.json"
 ).catch((error) => error.data);
-const liveVersion = version[9];
+const liveVersion = version[0];
 
 const data = await $fetch(
   `https://ddragon.leagueoflegends.com/cdn/${liveVersion}/data/pt_BR/champion.json`
@@ -25,7 +25,7 @@ console.log(championsArray);
       :key="champion.id"
       class="itens-center bg-[#141124] p-2 rounded shadow-md cursor-pointer"
     >
-    <a :href="`/${champion.id}`">
+    <a :href="`${liveVersion}/${champion.id}`">
       <img
         :src="`https://ddragon.leagueoflegends.com/cdn/${liveVersion}/img/champion/${champion.image.full}`"
         alt=""
