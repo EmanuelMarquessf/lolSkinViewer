@@ -67,6 +67,14 @@ function spellsOrganizer() {
   console.log(championInfo);
 }
 spellsOrganizer();
+function baixarImagem() {
+    var link = document.createElement("a");
+    link.download = "Akali_0.jpg";
+    link.href = "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Akali_0.jpg";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+}
 </script>
 <template>
   <!-- <header class="bg-[#141124] w-full p-10 fixed">
@@ -156,9 +164,21 @@ spellsOrganizer();
           'background-image': 'url(' + skinsArray[selectedSkin].splashURL + ')',
         }"
       >
+      
+      <div class="flex flex-row justify-between w-full items-center">
         <span class="text-[#f0e6d2] text-4xl">{{
-          skinsArray[selectedSkin].name
-        }}</span>
+          skinsArray[selectedSkin].name}}
+        </span>
+        <div class="flex flex-row gap-4 mt-4">
+          <a :href="skinsArray[selectedSkin].splashURL" target="_blank">
+            <IconsDownload class="w-8 h-8"></IconsDownload>
+          </a>
+          <a :href="skinsArray[selectedSkin].loadSplashURL" target="_blank">
+            <IconsMobileDownload class="w-8 h-8"></IconsMobileDownload>
+          </a>
+        </div>
+
+      </div>
       </div>
       <div class="flex flex-row gap-4 justify-between">
         <button @click="scrollElement('left')">
