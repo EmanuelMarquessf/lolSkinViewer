@@ -84,42 +84,52 @@ function baixarImagem() {
     class="bg-cover bg-no-repeat bg-right-top"
     :style="{ 'background-image': 'url(' + skinsArray[0].splashURL + ')' }"
   >
+    
     <div
-      class="flex flex-col justify-end w-full min-h-[900px] bg-gradient-to-t from-[#141124] to-transparent"
+      class="flex flex-col justify-end w-full md:min-h-[500px] lg:min-h-[650px] xl:min-h-[800px] 2xl:min-h-[900px] bg-gradient-to-t from-[#141124] to-transparent"
     >
-      <div class="flex flex-row mx-28 my-20 justify-between items-center">
+    <!-- <button class="absolute top-8 mx-24">
+      <IconsLeftArrow class="w-[70px] h-[70px]"></IconsLeftArrow>
+    </button> -->
+    <a href="/" class="absolute top-0 left-0 px-4 py-1 bg-[#131023] text-[#90703b] rounded-br-md font-bold">
+      <div class="flex flex-row items-center gap-2">
+        <IconsLeftArrow class="w-[20px] h-[20px] md:w-[25px] md:h-[25px]"></IconsLeftArrow>
+        <span class="text-xs md:text-sm">HOME</span>
+      </div>
+    </a>
+      <div class="flex flex-col gap-12 md:flex-row mx-6 lg:mx-20 xl:mx-28 mb-16 mt-5 md:my-20 md:justify-between md:items-center">
         <div class="flex flex-col">
-          <span class="text-[#90703b] text-9xl">{{ championInfo.name }}</span>
-          <span class="text-[#856533] text-3xl capitalize ml-3">{{
+          <span class="text-[#90703b] text-5xl mt-2 md:mt-0 md:text-8xl lg:text-9xl">{{ championInfo.name }}</span>
+          <span class="text-[#856533] text-xl md:text-2xl lg:text-3xl capitalize ml-3">{{
             championInfo.title
           }}</span>
         </div>
-        <div class="flex flex-col gap-8 justify-center text-[#f0e6d2]">
+        <div class="flex flex-row mt-10 md:mt-0 md:flex-col gap-8 justify-between md:justify-center text-[#f0e6d2]">
           <div class="flex flex-row" v-for="(tag, index) in championInfo.tags">
             <div class="flex flex-row gap-4">
               <div>
                 <IconsRoleAssassin
-                  class="w-[70px]"
+                  class="w-[40px] md:w-[70px]"
                   v-if="tag == 'Assassin'"
                 ></IconsRoleAssassin>
                 <IconsRoleFighter
-                  class="w-[70px]"
+                  class="w-[40px] md:w-[70px]"
                   v-if="tag == 'Fighter'"
                 ></IconsRoleFighter>
                 <IconsRoleMage
-                  class="w-[70px]"
+                  class="w-[40px] md:w-[70px]"
                   v-if="tag == 'Mage'"
                 ></IconsRoleMage>
                 <IconsRoleMarksman
-                  class="w-[70px]"
+                  class="w-[40px] md:w-[70px]"
                   v-if="tag == 'Marksman'"
                 ></IconsRoleMarksman>
                 <IconsRoleSupport
-                  class="w-[70px]"
+                  class="w-[40px] md:w-[70px]"
                   v-if="tag == 'Support'"
                 ></IconsRoleSupport>
                 <IconsRoleTank
-                  class="w-[70px]"
+                  class="w-[40px] md:w-[70px]"
                   v-if="tag == 'Tank'"
                 ></IconsRoleTank>
               </div>
@@ -127,7 +137,7 @@ function baixarImagem() {
                 <span class="text-normal uppercase font-thin"
                   >{{ index + 1 }}ª Role</span
                 >
-                <span class="text-xl uppercase font-bold">{{ tag }}</span>
+                <span class="text-lg lg:text-xl uppercase font-bold">{{ tag }}</span>
               </div>
             </div>
           </div>
@@ -135,30 +145,31 @@ function baixarImagem() {
       </div>
     </div>
   </div>
-  <div class="bg-[#141124] text-white">
-    <div class="flex flex-row gap-8 text-[#c4b998] mx-60">
+  <div class="bg-[#141124] text-white mx-10">
+    <div class="flex flex-row gap-8 text-[#c4b998] mx-4 xl:mx-32 2xl:mx-60">
       <div class="flex flex-col justify-evenly">
-        <div class="flex flex-row justify-between py-10 rounded items-center">
-          <p class="font-serif text-2xl text-justify font-thin w-[83%]">
-            <span class="text-7xl">{{ championInfo.lore[0] }}</span
+        <div class="flex flex-col xl:flex-row justify-between py-10 rounded items-center xl:gap-16">
+          <p class="font-serif text-2xl text-justify font-thin">
+            <span class="text-5xl md:text-7xl">{{ championInfo.lore[0] }}</span
             >{{ championInfo.lore.slice(1) }}
           </p>
           <img
-            class="rounded-full h-auto w-44 border border-[#a38447] border-[3px]"
+            class="rounded-full h-auto hidden order-first xl:order-2 md:block md:w-44 border-[#a38447] border-[3px]"
             :src="skinsArray[0].iconURL"
             :alt="championInfo.name"
           />
         </div>
       </div>
     </div>
-    <div class="flex flex-col gap-8 mx-64 py-28">
+    <!-- Carosel -->
+    <div class="flex flex-col gap-8 mx-2 xl:mx-32 2xl:mx-64 py-10 lg:py-16 xl:py-20 2xl:py-28">
       <!-- <img
         class="w-full h-[800px] rounded-lg border-[#856533] border-[3px]"
         :src="skinsArray[selectedSkin].splashURL"
         alt=""
       /> -->
       <div
-        class="flex justify-left place-items-end p-10 w-full h-[700px] border-[#856533] border-[3px] bg-cover"
+        class="flex justify-left place-items-end p-10 w-full h-[200px] md:h-[400px] lg:h-[600px] xl:h[650px] 2xl:h-[700px] border-[#856533] border-[3px] bg-cover"
         :alt="selectedSkin.name"
         :style="{
           'background-image': 'url(' + skinsArray[selectedSkin].splashURL + ')',
@@ -166,7 +177,7 @@ function baixarImagem() {
       >
       
       <div class="flex flex-row justify-between w-full items-center">
-        <span class="text-[#f0e6d2] text-4xl">{{
+        <span class="text-[#f0e6d2] text-2xl md:text-4xl">{{
           skinsArray[selectedSkin].name}}
         </span>
         <div class="flex flex-row gap-4 mt-4">
@@ -217,8 +228,8 @@ function baixarImagem() {
       </div>
     </div>
     <!--Skills-->
-    <div class="flex flex-row mx-64 py-10 gap-10 justify-between items-center">
-      <div class="flex flex-col w-[40%] gap-5">
+    <div class="flex flex-col lg:flex-row mx-2 md:mx-10 xl:mx-32 2xl:mx-64 py-10 gap-10 justify-between items-center">
+      <div class="flex flex-col lg:w-[40%] gap-5">
         <div class="flex flex-row justify-between">
           <div
             v-for="(spell, index) in championInfo.spells"
@@ -226,7 +237,7 @@ function baixarImagem() {
             class="flex flex-col"
           >
             <div
-              class="w-[70px] h-[70px] border-[3px] border-[#282820] grayscale"
+              class="bg-cover w-[60px] h-[60px] md:w-[70px] md:h-[70px] border-[3px] border-[#282820] grayscale"
               :alt="spell.name"
               :style="{
                 'background-image': `url(https://ddragon.leagueoflegends.com/cdn/${liveVersion}/img/${spell.image.group}/${spell.id}.png)`,
@@ -256,7 +267,7 @@ function baixarImagem() {
           </div>
         </div>
         <Separator></Separator>
-        <div class="flex flex-col gap-4 min-h-[350px] text-[#f2f2f2]">
+        <div class="flex flex-col gap-4 lg:min-h-[200px] xl:min-h-[280px] 2xl:min-h-[350px] text-[#f2f2f2]">
           <span class="text-4xl">{{ selectedSpell.name }}</span>
           <p class="text-justify text-xl whitespace-pre-line">{{
             selectedSpell.description.replace(/<br\s*\/?>/gi, '\n')
@@ -283,7 +294,7 @@ function baixarImagem() {
         </div> -->
       </div>
       <div
-        class="w-[750px] h-[515px] bg-gradient-to-tr from-[#605336] to-[#bfa57d] p-1"
+        class="bg-gradient-to-tr from-[#605336] to-[#bfa57d] p-1 w-[321px] h-[221px] md:w-[600px] md:h-[412px] lg:w-[500px] lg:h-[330px] xl:w-[600px] xl:h-[412px] 2xl:w-[750px] 2xl:h-[514px]"
       >
         <video
           class="bg-cover rounded"
@@ -310,10 +321,10 @@ function baixarImagem() {
     </div>
 
     <!--Pros Contras-->
-    <div class="flex flex-col mx-64 py-28">
-      <div class="flex flex-row justify-between">
-        <div class="flex flex-col w-[47%] gap-8">
-          <span class="text-4xl">Ally Tips</span>
+    <div class="flex flex-col mx-2 md:mx-10 xl:mx-32 2xl:mx-64 py-10 lg:py-16 xl:py-16 2xl:py-28">
+      <div class="flex flex-col lg:flex-row gap-12 lg:gap-0 justify-between">
+        <div class="flex flex-col lg:w-[47%] gap-8">
+          <span class="text-3xl md:text-4xl">Ally Tips</span>
           <div class="flex flex-col gap-4">
             <div
               class="flex flex-row items-center gap-4"
@@ -329,8 +340,8 @@ function baixarImagem() {
             </div>
           </div>
         </div>
-        <div class="flex flex-col w-[47%] gap-8">
-          <span class="text-4xl">Enemy Tips</span>
+        <div class="flex flex-col lg:w-[47%] gap-8">
+          <span class="text-3xl lg:text-4xl">Enemy Tips</span>
           <div class="flex flex-col gap-4">
             <div
               class="flex flex-row items-center gap-4"
