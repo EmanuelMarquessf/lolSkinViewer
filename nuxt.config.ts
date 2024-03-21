@@ -2,19 +2,18 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   app: {
-    buildAssetsDir: '',
+    baseURL: "https://emanuelmarquessf.github.io/lolSkinViewer",
+    buildAssetsDir: "",
   },
-  css: ['~/assets/css/main.css'],
+  css: ["~/assets/css/main.css"],
   postcss: {
     plugins: {
       tailwindcss: {},
       autoprefixer: {},
     },
   },
-  modules:[
-    'vue3-carousel-nuxt'
-  ],
+  modules: ["vue3-carousel-nuxt"],
   carousel: {
-    prefix: 'MyPrefix'
-  }
-})
+    prefix: "MyPrefix",
+  },
+});
