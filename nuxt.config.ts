@@ -2,7 +2,6 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   app: {
-    baseURL: 'https://lolchampionsviewer.netlify.app',
     buildAssetsDir: '',
   },
   css: ['~/assets/css/main.css'],
