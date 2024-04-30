@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   app: {
-    baseURL: "https://emanuelmarquessf.github.io/lolSkinViewer",
+    baseURL: "",
     buildAssetsDir: "",
   },
   css: ["~/assets/css/main.css"],

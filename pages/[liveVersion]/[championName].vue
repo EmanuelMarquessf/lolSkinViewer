@@ -4,7 +4,7 @@ let skinsArray = [];
 const liveVersion = route.params.liveVersion;
 
 const loadedChampion = await $fetch(
-  `http://ddragon.leagueoflegends.com/cdn/${liveVersion}/data/en_US/champion/${route.params.championName}.json`
+  `https://ddragon.leagueoflegends.com/cdn/${liveVersion}/data/en_US/champion/${route.params.championName}.json`
 ).catch((error) => error.data);
 const championInfo = loadedChampion.data[route.params.championName];
 skinsOrganizer();
