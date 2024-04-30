@@ -27,8 +27,8 @@ function skinsOrganizer() {
     skinsArray.push(loadSkin);
   });
 }
-console.log(championInfo);
-console.log(skinsArray);
+// console.log(championInfo);
+// console.log(skinsArray);
 
 let selectedSkin = ref(0);
 let selectedSpell = ref(championInfo.spells[0]);
@@ -49,8 +49,8 @@ function scrollElement(position) {
     });
   }
 }
-console.log(championInfo.spells);
-console.log(championInfo.key);
+// console.log(championInfo.spells);
+// console.log(championInfo.key);
 
 function spellsOrganizer() {
   const passive = {
@@ -64,7 +64,7 @@ function spellsOrganizer() {
     },
   };
   championInfo.spells.unshift(passive);
-  console.log(championInfo);
+  // console.log(championInfo);
 }
 spellsOrganizer();
 function baixarImagem() {
@@ -77,9 +77,7 @@ function baixarImagem() {
 }
 </script>
 <template>
-  <!-- <header class="bg-[#141124] w-full p-10 fixed">
 
-  </header> -->
   <div
     class="bg-cover bg-no-repeat bg-right-top"
     :style="{ 'background-image': 'url(' + skinsArray[0].splashURL + ')' }"
@@ -98,11 +96,9 @@ function baixarImagem() {
       </div>
     </a>
       <div class="flex flex-col gap-12 md:flex-row mx-6 lg:mx-20 xl:mx-28 mb-16 mt-5 md:my-20 md:justify-between md:items-center">
-        <div class="flex flex-col">
+        <div class="flex flex-col gap-4">
           <span class="text-[#90703b] text-5xl mt-2 md:mt-0 md:text-8xl lg:text-9xl">{{ championInfo.name }}</span>
-          <span class="text-[#856533] text-xl md:text-2xl lg:text-3xl capitalize ml-3">{{
-            championInfo.title
-          }}</span>
+          <span class="text-[#856533] text-xl md:text-2xl lg:text-3xl capitalize ml-3">{{ championInfo.title }}</span>
         </div>
         <div class="flex flex-row mt-10 md:mt-0 md:flex-col gap-8 justify-between md:justify-center text-[#f0e6d2]">
           <div class="flex flex-row" v-for="(tag, index) in championInfo.tags">

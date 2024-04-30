@@ -4,6 +4,12 @@ export default defineNuxtConfig({
   app: {
     baseURL: "",
     buildAssetsDir: "",
+    head: {
+      title: 'League Skin Viewer',
+      link: [
+        { rel: "icon", type: "image/png", href: "/lolIcon.svg" }
+      ]
+    }
   },
   css: ["~/assets/css/main.css"],
   postcss: {

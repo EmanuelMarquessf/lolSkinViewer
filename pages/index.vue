@@ -30,6 +30,7 @@ watch(
 </script>
 
 <template>
+  <div class="flex flex-col justify-between h-[100vh]">
   <div class="flex flex-col  lg:flex-row gap-8 lg:gap-0 justify-between items-center my-10 m-4 mx-4 md:mx-10 xl:mx-28 2xl:mx-64">
     <div class="flex flex-col gap-4">
       <span class="text-center lg:text-left text-5xl md:text-6xl font-sans text-[#90703b] uppercase">League of Legends</span>
@@ -86,6 +87,7 @@ watch(
     </div>
   </div>
   <Footer></Footer>
+  </div>
 </template>
 
 <style scoped >
