@@ -91,7 +91,7 @@ function baixarImagem() {
     <!-- <button class="absolute top-8 mx-24">
       <IconsLeftArrow class="w-[70px] h-[70px]"></IconsLeftArrow>
     </button> -->
-    <a href="/lolSkinViewer" class="absolute top-0 left-0 px-4 py-1 bg-[#131023] text-[#90703b] rounded-br-md font-bold">
+    <a href="/" class="absolute top-0 left-0 px-4 py-1 bg-[#131023] text-[#90703b] rounded-br-md font-bold">
       <div class="flex flex-row items-center gap-2">
         <IconsLeftArrow class="w-[20px] h-[20px] md:w-[25px] md:h-[25px]"></IconsLeftArrow>
         <span class="text-xs md:text-sm">HOME</span>
